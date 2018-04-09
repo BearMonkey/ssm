@@ -1,0 +1,231 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>org.monkey</groupId>
+    <artifactId>ssm</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+  </parent>
+  <artifactId>ssm-web</artifactId>
+  <packaging>war</packaging>
+  
+  <!-- 设置依赖包的版本号 -->
+  <properties>
+    <junit.version>4.11</junit.version>
+    <javaee-api>8.0</javaee-api>
+    <srping.version>4.3.15.RELEASE</srping.version>
+    <commons-dbcp>1.4</commons-dbcp>
+    <jstl>1.2</jstl>
+    <jstl-standard>1.1.2</jstl-standard>
+    <log4j.version>1.2.17</log4j.version>
+    <slf4j.version>1.7.25</slf4j.version>
+    <fastjson>1.2.44</fastjson>
+    <jackson-mapper-asl>1.9.13</jackson-mapper-asl>
+    <jackson.version>2.8.10</jackson.version>
+    <commons-fileupload>1.3.1</commons-fileupload>
+    <commons-io>2.4</commons-io>
+    <commons-codec>1.10</commons-codec>
+  </properties>
+  
+  <!-- 集中引入依赖包 -->
+  <dependencies>
+    <dependency>
+      <groupId>org.monkey</groupId>
+      <artifactId>ssm-common</artifactId>
+      <version>${project.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.monkey</groupId>
+      <artifactId>ssm-dao</artifactId>
+      <version>${project.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.monkey</groupId>
+      <artifactId>ssm-service</artifactId>
+      <version>${project.version}</version>
+    </dependency>
+    
+    <!-- 单元测试 -->
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>${junit.version}</version>
+      <!-- 表示开发的时候引入，发布的时候不会加载此包 -->
+      <scope>test</scope>
+    </dependency>
+    
+    <!-- java ee包 -->
+    <dependency>
+      <groupId>javax</groupId>
+      <artifactId>javaee-api</artifactId>
+      <version>${javaee-api}</version>
+    </dependency>
+    
+    <!-- spring框架包 start -->
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-test</artifactId>
+      <version>${srping.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-core</artifactId>
+      <version>${srping.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-oxm</artifactId>
+      <version>${srping.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-tx</artifactId>
+      <version>${srping.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-jdbc</artifactId>
+      <version>${srping.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-aop</artifactId>
+      <version>${srping.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-context</artifactId>
+      <version>${srping.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-context-support</artifactId>
+      <version>${srping.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-expression</artifactId>
+      <version>${srping.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-orm</artifactId>
+      <version>${srping.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-web</artifactId>
+      <version>${srping.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-webmvc</artifactId>
+      <version>${srping.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-aspects</artifactId>
+      <version>${srping.version}</version>
+    </dependency>
+    <!-- spring框架包 end -->
+    
+    <dependency>
+      <groupId>commons-dbcp</groupId>
+      <artifactId>commons-dbcp</artifactId>
+      <version>${commons-dbcp}</version>
+    </dependency>
+    
+    <dependency>
+      <groupId>jstl</groupId>
+      <artifactId>jstl</artifactId>
+      <version>${jstl}</version>
+    </dependency>
+    <dependency>
+      <groupId>taglibs</groupId>
+      <artifactId>standard</artifactId>
+      <version>${jstl-standard}</version>
+    </dependency>
+    
+    <!-- log start -->
+    <dependency>
+      <groupId>log4j</groupId>
+      <artifactId>log4j</artifactId>
+      <version>${log4j.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>slf4j-api</artifactId>
+      <version>${slf4j.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>slf4j-log4j12</artifactId>
+      <version>${slf4j.version}</version>
+    </dependency>
+    <!-- log END -->
+    
+    <!-- json -->
+    <dependency>
+      <groupId>com.alibaba</groupId>
+      <artifactId>fastjson</artifactId>
+      <version>${fastjson}</version>
+    </dependency>
+	<dependency>
+	  <groupId>org.codehaus.jackson</groupId>
+	  <artifactId>jackson-mapper-asl</artifactId>
+	  <version>${jackson-mapper-asl}</version>
+	</dependency>
+	<dependency>  
+      <groupId>com.fasterxml.jackson.core</groupId>  
+	  <artifactId>jackson-core</artifactId>  
+	  <version>${jackson.version}</version>  
+    </dependency>
+	<dependency>
+	  <groupId>com.fasterxml.jackson.core</groupId>
+	  <artifactId>jackson-databind</artifactId>
+      <version>${jackson.version}</version>
+	</dependency>
+	    
+    
+    <!-- 上传组件包 start -->
+    <dependency>
+      <groupId>commons-fileupload</groupId>
+      <artifactId>commons-fileupload</artifactId>
+      <version>${commons-fileupload}</version>
+    </dependency>
+    <dependency>
+      <groupId>commons-io</groupId>
+      <artifactId>commons-io</artifactId>
+      <version>${commons-io}</version>
+    </dependency>
+    <dependency>
+      <groupId>commons-codec</groupId>
+      <artifactId>commons-codec</artifactId>
+      <version>${commons-codec}</version>
+    </dependency>
+    <!-- 上传组件包 end -->
+    
+  </dependencies>
+  
+  <build>
+    <finalName>ssm</finalName>
+    <resources>
+      <!--<resource>-->
+      <!--<directory>src/main/resources</directory>-->
+      <!--<includes>-->
+      <!--<include>**/*.properties</include>-->
+      <!--<include>**/*.xml</include>-->
+      <!--</includes>-->
+      <!--<filtering>true</filtering>-->
+      <!--</resource>-->
+      <resource>
+        <directory>src/main/java</directory>
+        <includes>
+          <include>**/*.properties</include>
+          <include>**/*.xml</include>
+        </includes>
+        <filtering>true</filtering>
+      </resource>
+    </resources>
+  </build>
+  
+</project>

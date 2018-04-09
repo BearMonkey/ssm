@@ -1,0 +1,7 @@
+#mainbody{}
+.wid{width: 900px; margin: 10px auto;}
+.wid::after, .wid::before {
+    content:" ";
+    display:block;
+    clear:both;
+}
