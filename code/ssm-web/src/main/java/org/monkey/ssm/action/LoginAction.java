@@ -2,7 +2,6 @@ package org.monkey.ssm.action;
 
 import javax.annotation.Resource;
 
-import org.apache.commons.codec.digest.Md5Crypt;
 import org.apache.log4j.Logger;
 import org.monkey.ssm.pojo.User;
 import org.monkey.ssm.service.api.IUserService;
@@ -30,6 +29,9 @@ public class LoginAction {
             try {
                 log.info(MD5Util.generate(passwd));
                 User user = userService.loginCheck(account, MD5Util.MD5(passwd));
+                if(null == user) {
+                	
+                }
             } catch (Exception e) {
                 // TODO: handle exception
             }

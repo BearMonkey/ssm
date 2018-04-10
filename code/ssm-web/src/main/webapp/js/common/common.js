@@ -26,3 +26,16 @@ $.fn.serializeObject = function() {
     });  
     return o;  
 } 
+
+/**
+ * 判断是否为空，如果为空返回true，不为空返回false
+ * @param str 要判断的字符串
+ * @returns {Boolean}
+ */
+function isEmpty(str) {
+	if(null == str || "" == str) {
+		return true;
+	} else {
+		return false;
+	}
+}
