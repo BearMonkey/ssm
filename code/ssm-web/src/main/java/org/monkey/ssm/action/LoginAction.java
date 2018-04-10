@@ -8,6 +8,7 @@ import org.monkey.ssm.pojo.User;
 import org.monkey.ssm.service.api.IUserService;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.ModelAndView;
 
 import orm.monkey.ssm.util.MD5Util;
 import orm.monkey.ssm.util.StringUtil;
@@ -34,6 +35,10 @@ public class LoginAction {
             }
             return "user/list";
         }
+    }
+    
+    public ModelAndView test(){
+        return new ModelAndView();
     }
     
     @RequestMapping("login/signUp")
