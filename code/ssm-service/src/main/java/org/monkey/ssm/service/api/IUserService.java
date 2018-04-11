@@ -21,4 +21,10 @@ public interface IUserService {
      * @return
      */
     public User loginCheck(String account, String passwd);
+
+    /**
+     * 注册检查
+     * @param account
+     */
+    public User registCheck(String account);
 }

@@ -22,18 +22,18 @@
               <form id="form-signup" action="">
                 <div class="form-group">
                   <label for="">用户名</label>
-                  <input class="form-control" type="text" id="account" name="account" value="" placeholder="用户名">
-                  <p class="help-block text-danger"></p>
+                  <input class="form-control" type="text" id="account" name="user.account" value="" placeholder="用户名">
+                  <p class="text-danger"></p>
                 </div>
                 <div class="form-group">
                   <label for="">密码</label>
-                  <input class="form-control" type="text" id="passwd" name="passwd" value="" placeholder="密码">
-                  <p class="help-block text-danger"></p>
+                  <input class="form-control" type="text" id="passwd" name="user.passwd" value="" placeholder="密码">
+                  <p class="text-danger"></p>
                 </div>
                 <div class="form-group">
                   <label for="">密码确认</label>
                   <input class="form-control" type="text" id="confirmPwd" name="confirmPwd" value="" placeholder="密码确认">
-                  <p class="help-block text-danger"></p>
+                  <p class="text-danger"></p>
                 </div>
                 <div class="col-md-6">
                   <button type="button" class="form-control btn btn-success" id="btn-signup">注册</button>
@@ -41,7 +41,7 @@
                 <div class="col-md-6">
                   <button type="button" class="form-control btn btn-default" id="btn-cancel" onclick="javascript:history.back(-1);">取消</button>
                 </div>
-                <p class="text-danger">asdf</p>
+                <p class="text-danger"></p>
               </form>
             </div>
           </div>

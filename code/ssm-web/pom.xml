@@ -16,8 +16,6 @@
     <commons-dbcp>1.4</commons-dbcp>
     <jstl>1.2</jstl>
     <jstl-standard>1.1.2</jstl-standard>
-    <log4j.version>1.2.17</log4j.version>
-    <slf4j.version>1.7.25</slf4j.version>
     <fastjson>1.2.44</fastjson>
     <jackson-mapper-asl>1.9.13</jackson-mapper-asl>
     <jackson.version>2.8.10</jackson.version>
@@ -145,24 +143,6 @@
       <version>${jstl-standard}</version>
     </dependency>
     
-    <!-- log start -->
-    <dependency>
-      <groupId>log4j</groupId>
-      <artifactId>log4j</artifactId>
-      <version>${log4j.version}</version>
-    </dependency>
-    <dependency>
-      <groupId>org.slf4j</groupId>
-      <artifactId>slf4j-api</artifactId>
-      <version>${slf4j.version}</version>
-    </dependency>
-    <dependency>
-      <groupId>org.slf4j</groupId>
-      <artifactId>slf4j-log4j12</artifactId>
-      <version>${slf4j.version}</version>
-    </dependency>
-    <!-- log END -->
-    
     <!-- json -->
     <dependency>
       <groupId>com.alibaba</groupId>
@@ -207,7 +187,7 @@
   </dependencies>
   
   <build>
-    <finalName>ssm</finalName>
+    <finalName>ssm-web</finalName>
     <plugins>  
       <plugin>  
         <groupId>org.apache.maven.plugins</groupId>  

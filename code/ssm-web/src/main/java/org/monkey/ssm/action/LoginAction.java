@@ -1,5 +1,8 @@
 package org.monkey.ssm.action;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import javax.annotation.Resource;
 
 import org.apache.log4j.Logger;
@@ -8,6 +11,8 @@ import org.monkey.ssm.service.api.IUserService;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
+
+import com.alibaba.fastjson.JSONObject;
 
 import orm.monkey.ssm.util.MD5Util;
 import orm.monkey.ssm.util.StringUtil;
@@ -45,11 +50,29 @@ public class LoginAction {
     
     @RequestMapping("login/signUp")
     public String signUp(User user){
-        log.info("login signUp");
+        log.info("signUp");
         if(null == user || StringUtil.isEmpty(user.getAccount())) {
+            log.info("forward");
             return "login/signUp";
         } else {
-            return "user/list";
+            log.info("add");
+            JSONObject map = new JSONObject();
+            try {
+                User checkUser = userService.registCheck(user.getAccount());
+                if(null != checkUser) {
+                    map.put("code", "200");
+                    map.put("msg", "exist_user");
+                } else {
+                    map.put("code", "200");
+                    map.put("msg", "success");
+                }
+                
+            } catch (Exception e) {
+                // TODO: handle exception
+                map.put("code", "500");
+                map.put("msg", "server_error");
+            }
+            return map.toJSONString();
         }
     }
     
